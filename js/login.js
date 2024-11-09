@@ -1,13 +1,12 @@
-let isLogged = localStorage.getItem("isLogged") === "true";
+let isLogged = false;
 const adminPanel = document.getElementById("adminPanel");
 const loginForm = document.getElementById("loginForm");
 const loginValidation = document.getElementById("loginValidation");
 const endpoint = "http://localhost:3000/0/";
-const book = document.getElementById("book"); // Use `getElementById` for consistency
+const book = document.querySelector("#book");
 const correctUsername = "admin";
 const correctPassword = "admin";
 
-// Function to set the display based on login status
 const setLogged = () => {
     if (isLogged) {
         adminPanel.style.display = "block";
@@ -19,14 +18,14 @@ const setLogged = () => {
 };
 
 loginValidation.addEventListener("submit", (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const username = document.getElementById("login").value;
     const password = document.getElementById("password").value;
 
     if (username === correctUsername && password === correctPassword) {
         isLogged = true;
-        alert("Login successfully.");
+        alert("Login successful.");
     } else {
         alert("You entered the wrong password.");
     }
@@ -36,64 +35,67 @@ loginValidation.addEventListener("submit", (e) => {
 
 setLogged();
 
-// Fetch and display books
 axios
   .get(endpoint)
   .then(({ data }) => {
-    data.forEach(({id, image_url, title, author, category, publication_date}) => {
+    data.forEach(({ id, image_url, title, author, category, publication_date }) => {
       book.innerHTML += `
-      <div class="book" id="book">
+        <div class="book" id="book-${id}">
            <img src="${image_url}" alt="">
            <h2>${title}</h2>
            <div class="text-container">
                <h3>Author: ${author}</h3>
                <p>Category: ${category}</p>
-               <p>Date of publish: ${publication_date}</p>
+               <p>Date of Publish: ${publication_date}</p>
                <button onclick="deleteItem(${id})">Delete</button>
            </div>
-      </div>`;
+        </div>`;
     });
   })
   .catch((error) => {
     alert(error.message);
   });
 
-// Function to delete a book
+// Delete Item
 const deleteItem = (id) => {
     const isAgree = confirm("Do you want to delete?");
     if (isAgree) {
-        axios.delete(`${endpoint}${id}`).then((response) => {
-            console.log(response);
+        axios.delete(`${endpoint}${id}`).then((res) => {
+            console.log(res);
+            document.getElementById(`book-${id}`).remove(); // Remove deleted item from DOM
         }).catch((error) => {
-            alert(error.message);
+            console.error("Error deleting item:", error.message);
         });
     }
 };
 
-// Selectors for form inputs and the add button
-const addItem = document.querySelector("#addItem"); // Correct selector with #
+// Add Item
+const addItemForm = document.getElementById("addItem");
 const imageInp = document.getElementById("image");
 const nameInp = document.getElementById("name");
 const authorInp = document.getElementById("author");
 const categoryInp = document.getElementById("category");
 const dateInp = document.getElementById("date");
 
-// Event listener to add a new book
-addItem.addEventListener("submit", (e) => {
+if (addItemForm) {
+  addItemForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const newItem = {
-        image_url: imageInp.value,
-        title: nameInp.value,
-        author: authorInp.value,
-        category: categoryInp.value,
-        publication_date: dateInp.value,
+      image_url: imageInp.value,
+      title: nameInp.value,
+      author: authorInp.value,
+      category: categoryInp.value,
+      publication_date: dateInp.value,
     };
 
-    axios.post(endpoint, newItem).then((response) => {
-        console.log(response.data);
-        alert("Book added successfully!");
-        location.reload
-    }).catch((error) => {
-        alert(error.message);
-    });
-});
+    axios.post(endpoint, newItem)
+      .then((res) => {
+        console.log("Item added:", res);
+      })
+      .catch((error) => {
+        console.error("Error adding item:", error.message);
+      });
+  });
+} else {
+  console.error("Element with id 'addItem' not found");
+}
