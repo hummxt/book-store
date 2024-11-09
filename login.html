@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/login.css" />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+        text-decoration: none;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        background-color: #ececec;
+        flex-direction: column;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 20%;
+        background-color: #142d4c;
+        padding: 40px 100px;
+      }
+
+      header .logo {
+        color: white;
+      }
+
+      header a {
+        color: #142d4c;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 16px;
+        background-color: white;
+        border: none;
+        outline: none;
+      }
+
+      .books {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        height: auto;
+        margin-top: 16vh;
+      }
+
+      .books .book,
+      .addItem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 90%;
+        flex-direction: column;
+        background-color: #142d4c;
+        margin: 20px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .book .text-container {
+        margin-top: 20px;
+        margin: 20px;
+      }
+
+      .book img {
+        width: 150px;
+        height: 220px;
+        margin-top: 30px;
+        object-fit: cover;
+        display: block;
+        box-shadow: rgba(137, 137, 137, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+
+      .book h2 {
+        margin: 6px;
+        padding: 3px;
+        color: white;
+        margin-top: 20px;
+      }
+
+      .book h3,
+      .book p {
+        margin: 6px;
+        padding: 3px;
+        color: white;
+      }
+
+      .book button {
+        font-size: 16px;
+        width: 30%;
+        height: 16%;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        border: 2px solid white;
+      }
+
+      .addItem h1 {
+        margin-bottom: 1 0px;
+        color: white;
+      }
+
+      .addItem input {
+        margin-bottom: 25px;
+      }
+
+      .addItem input {
+        width: 60%;
+        height: 9%;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        border: 2px solid white;
+        font-size: 16px;
+      }
+
+      .addItem button {
+        font-size: 16px;
+        width: 30%;
+        height: 9%;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        border: 2px solid white;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>Hummat's Book Store</h1>
+      </div>
+      <a href="index.html">Main Page</a>
+    </header>
+    <div class="container">
+      <div class="loginForm" id="loginForm">
+        <form id="loginValidation">
+          <h1>Login</h1>
+          <input
+            class="control"
+            type="text"
+            name="login"
+            id="login"
+            placeholder="Enter your username"
+            required
+          />
+          <input
+            class="control"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+          <button type="submit" class="control" value="loginApprove">
+            Login
+          </button>
+        </form>
+      </div>
+      <div
+        id="adminPanel"
+        style="
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin: auto;
+          display: none;
+        "
+      >
+      <div class="books" id="book">
+        <form class="addItem" id="addItem">
+          <h1>Add Book</h1>
+          <input type="text" id="image" placeholder="Enter the Image URL" required />
+          <input type="text" id="name" placeholder="Name of the book" required />
+          <input type="text" id="author" placeholder="Name of the author" required />
+          <input type="text" id="category" placeholder="Name of the category" required />
+          <input type="text" id="date" placeholder="Date of the publish" required />
+          <button type="submit" id="add">Add Book</button>
+        </form>
+      </div>
+      
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+      integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

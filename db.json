@@ -1,0 +1,108 @@
+[
+  [
+    {
+      "id": "3",
+      "image_url": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "publication_date": "1813-01-28",
+      "category": "Romance, Satire"
+    },
+    {
+      "id": "4",
+      "image_url": "https://m.media-amazon.com/images/I/51jPo0RDFUL._SL500_.jpg",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publication_date": "1925-04-10",
+      "category": "Tragedy, Realism"
+    },
+    {
+      "id": "5",
+      "image_url": "https://www.loyalbooks.com/image/detail/Moby-Dick-or-the-Whale.jpg",
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "publication_date": "1851-10-18",
+      "category": "Adventure, Epic, Novel"
+    },
+    {
+      "id": "6",
+      "image_url": "https://m.media-amazon.com/images/I/51iWxwNHzQL._SY445_SX342_.jpg",
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "publication_date": "1869-01-01",
+      "category": "Historical Fiction"
+    },
+    {
+      "id": "7",
+      "image_url": "https://i.ebayimg.com/images/g/SkgAAOSwTXFnFUoP/s-l500.webp",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publication_date": "1937-09-21",
+      "category": "Fantasy, Adventure"
+    },
+    {
+      "id": "8",
+      "image_url": "https://m.media-amazon.com/images/I/51SkKGzda1L._SY445_SX342_.jpg",
+      "title": "Ulysses",
+      "author": "James Joyce",
+      "publication_date": "1922-02-02",
+      "category": "Modernist Novel"
+    },
+    {
+      "id": "9",
+      "image_url": "https://m.media-amazon.com/images/I/51sOvvkKVhL._SY445_SX342_.jpg",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "publication_date": "1951-07-16",
+      "category": "Realistic Fiction, Coming-of-age"
+    },
+    {
+      "id": "10",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg/774px-The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg",
+      "title": "Great Expectations",
+      "author": "Charles Dickens",
+      "publication_date": "1861-01-01",
+      "category": "Bildungsroman"
+    },
+    {
+      "id": "11",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327881361i/320.jpg",
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "publication_date": "1967-05-30",
+      "category": "Magic Realism"
+    },
+    {
+      "id": "12",
+      "image_url": "https://m.media-amazon.com/images/I/51u+1xJm0xL._SY445_SX342_.jpg",
+      "title": "Madame Bovary",
+      "author": "Gustave Flaubert",
+      "publication_date": "1857-01-01",
+      "category": "Realist Novel"
+    },
+    {
+      "id": "13",
+      "image_url": "https://m.media-amazon.com/images/I/51Jtq57ks9L._SY445_SX342_.jpg",
+      "title": "The Odyssey",
+      "author": "Homer",
+      "publication_date": "800-01-01",
+      "category": "Epic Poetry"
+    },
+    {
+      "id": "14",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4b/Crimeandpunishmentcover.png",
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "publication_date": "1866-01-01",
+      "category": "Psychological Fiction, Philosophical Novel"
+    },
+    {
+      "id": "15",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657540227i/6656.jpg",
+      "title": "The Divine Comedy",
+      "author": "Dante Alighieri",
+      "publication_date": "1320-01-01",
+      "category": "Epic Poetry, Christian Literature"
+    }
+  ]
+]
